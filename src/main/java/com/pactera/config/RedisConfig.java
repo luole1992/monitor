@@ -1,22 +1,22 @@
 package com.pactera.config;
 
-import com.pactera.Component.RedisChannelSub;
-import com.pactera.Component.RedisMsg;
-import com.pactera.Component.RedisPmpSub;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.listener.PatternTopic;
-import org.springframework.data.redis.listener.RedisMessageListenerContainer;
-import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
-import redis.clients.jedis.HostAndPort;
-import redis.clients.jedis.JedisCluster;
+        import com.pactera.Component.RedisChannelSub;
+        import com.pactera.Component.RedisMsg;
+        import com.pactera.Component.RedisPmpSub;
+        import org.springframework.beans.factory.annotation.Value;
+        import org.springframework.cache.annotation.EnableCaching;
+        import org.springframework.context.annotation.Bean;
+        import org.springframework.context.annotation.Configuration;
+        import org.springframework.context.annotation.Scope;
+        import org.springframework.data.redis.connection.RedisConnectionFactory;
+        import org.springframework.data.redis.listener.PatternTopic;
+        import org.springframework.data.redis.listener.RedisMessageListenerContainer;
+        import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
+        import redis.clients.jedis.HostAndPort;
+        import redis.clients.jedis.JedisCluster;
 
-import java.util.HashSet;
-import java.util.Set;
+        import java.util.HashSet;
+        import java.util.Set;
 
 /**
  * @Classname RedisConfig
