@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pactera.mapper.UserMapper">
+    <resultMap type="com.pactera.entity.User" id="usermap">
+        <id column="userid" property="userid"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="phone" property="phone"/>
+        <collection property="userAddrList" ofType="com.pactera.entity.UserAddr">
+            <id column="id" property="id"></id>
+            <result column="usernameid" property="usernameid"></result>
+            <result column="province" property="province"></result>
+            <result column="city" property="city"></result>
+        </collection>
+    </resultMap>
+
+    <select id="getUser" resultType="com.pactera.entity.User">
+		select * from t_user
+	</select>
+
+    <select id="findUserAddr" resultMap="usermap">
+        select * from t_user u,t_useraddr d
+        where
+        u.userid=d.usernameid and u.username=#{username}
+    </select>
+
+
+</mapper>
